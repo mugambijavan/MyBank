@@ -12,7 +12,7 @@ const Home = () => {
           <HeaderBox 
             type= "greeting"
             title= "Welcome"
-            user= {loggedIn?.firstName || 'User'}
+            user= {loggedIn?.firstName || 'Mugambi'}
             subtext= "Access your Bank accounts"
           />
 
@@ -27,10 +27,11 @@ const Home = () => {
       <RightSideBar 
       user={loggedIn}
       transactions= {[]}
-      banks= {[{}, {}]}
+      banks= {[{currentBalance: 5000 }, {currentBalance: 5000 }]}
       
       />
     </section>
+    
   )
 }
 
