@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from "next/image"
@@ -40,13 +41,11 @@ const AuthForm = ({type}: {type:string}) => {
                 setUser(newUser)
             }
             if(type === 'sign-in'){
-                const response = await SignIn({
-                    email: data.email,
-                    password:  data.password,
-                })
-
-                if(response) router.push ('/')
-
+                //const response = await SignIn({
+                    //email: data.email,
+                    //password:  data.password,
+                //})
+                //if(response) router.push ('/')
             }
         } catch (error) {
             console.log(error);
@@ -145,10 +144,10 @@ const AuthForm = ({type}: {type:string}) => {
                             <Button className="form-btn"  type="submit" disabled={isLoading}>
                                 {isLoading ? (
                                     <>
-                                    <Loader2 className="animate-spin" size={24} /> &nbsp;
+                                    <Loader2 className="animate-spin" size={20} /> &nbsp;
                                         Loading...
                                     </>
-                                ) : type === 'sign-in' ? 'Sign-In' : 'Sign-Up'}
+                                ) : type === 'sign-in' ? 'Sign In' : 'Sign Up'}
                             </Button>
                             </div>
                     </form>
